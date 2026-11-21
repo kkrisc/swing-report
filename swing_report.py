@@ -25,6 +25,7 @@ import base64
 import datetime as dt
 import hashlib
 import html
+import os
 import re
 import sys
 import warnings
@@ -961,6 +962,7 @@ def main():
                window=window, skipped=skipped, halfs=halfs, soon_end=soon_end, movers=movers,
                n_univ=len(ind), n_drop15=sum(r < -0.15 for _, r in ret5), period=a.period.replace("y", " years"),
                start=spy.index[0].date(), account=a.account, risk=a.risk)
+    os.makedirs(os.path.dirname(a.out) or ".", exist_ok=True)
     with open(a.out, "w", encoding="utf-8") as f:
         f.write(render(ctx))
 
