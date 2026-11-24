@@ -177,7 +177,7 @@ No setup has a meaningful edge. Higher odds of +10% come with higher odds of −
 - Vulnerability (Dependabot) alerts are on. Pages uses `build_type=workflow`, HTTPS is enforced (http redirects to https, verified).
 
 **The user's side**
-- 2FA on the GitHub account matters most, because account takeover is the main remaining risk. It couldn't be verified via the API, so keep reminding.
+- 2FA on the GitHub account matters most, because account takeover is the main remaining risk. **The user confirmed it's enabled (24 Nov 2026).**
 - The page is public by URL (free Pages). It contains only market data and the $1,000 sizing example.
 
 ---
@@ -245,7 +245,7 @@ git add <files> && git commit && git push                                       
 9. The first CI run failed because `site/` was missing; fixed with `os.makedirs`. The second run succeeded and the live page was verified.
 10. Wrote the first version of this handoff.
 11. **22–24 Nov.** The user asked what SPY and "vs 50-day avg" mean, then asked for a definitions menu and at-a-glance visuals. I explained that the VIX is a fear gauge, not a fear-and-greed index. Added the **Glossary** and the **visuals** (section 5). The screenshot review found and fixed: square legend keys, a VIX label sitting on the line, three-line gauge labels on phones, a watchlist column too wide for phones, a phone heading hidden under the sticky menu (fixed with `data-view` and scroll-to-top), and an overflowing scoreboard table. The user checked the page locally, then approved: committed `c822efd`, pushed, ran the refresh (`45342696378`, green), and verified the live page.
-12. **24 Nov.** Split this handoff into a public file (this one, committed) and a private `swing-report-local.md` (not committed).
+12. **24 Nov.** Split this handoff into a public file (this one, committed) and a private `swing-report-local.md` (not committed). The user then removed stray local key files and confirmed GitHub 2FA is on. No open security items remain.
 
 ---
 
@@ -262,8 +262,8 @@ git add <files> && git commit && git push                                       
 
 ## 12. Next steps
 
-- [ ] The user should confirm **2FA is on** for the GitHub account.
-- [ ] Clean-up items are listed in `swing-report-local.md` (machine-specific).
+- [x] 2FA on the GitHub account: confirmed enabled (24 Nov).
+- [x] Machine clean-up of stray key files: done (24 Nov; details in `swing-report-local.md`).
 - [ ] Optional: refresh the dependency lock and action SHAs every month or two, or on a vulnerability alert (sections 8.1–8.2).
 - Ideas not started:
   - track the user's real trades and their hit rate
